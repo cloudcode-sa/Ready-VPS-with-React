@@ -52,23 +52,6 @@ systemctl start nginx
 
 mkdir -p "$WEB_ROOT"
 
-# ================= STEP 7 =================
-echo "📦 Clone React App (edit repo URL manually)"
-# sudo -u $NEW_USER git clone git@github.com:your/repo.git $WEB_ROOT
-
-# ================= STEP 8 =================
-echo "⚙️ Build React App..."
-cd $WEB_ROOT
-npm install
-npm run build
-
-# Detect build folder (Vite or CRA)
-if [ -d "dist" ]; then
-  BUILD_DIR="dist"
-else
-  BUILD_DIR="build"
-fi
-
 # ================= STEP 9 =================
 echo "🧾 Configure Nginx..."
 
